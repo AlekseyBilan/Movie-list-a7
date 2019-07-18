@@ -1,3 +1,12 @@
-<p>
+<button class="btn btn-primary"
+        [disabled]="allowNewServer"
+        (click)="onCreateServer()"
+
+>Add server</button>
+<hr>
+<p class="{{ serverId }}">
   server works!
+  Name: {{ serverName }}
 </p>
+<a href="#">{{ getServerId() }}</a>
+<hr>
