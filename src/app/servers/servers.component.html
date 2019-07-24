@@ -1,3 +1,13 @@
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+<div class="row">
+    <div class="col">
+      <input  type="text"  class="form-control"  [(ngModel)]="serverName" >
+      <!--<input  type="text"  class="form-control"  (input)="changeServerName($event)" >-->
+      <label>{{serverName}}</label>
+    </div>
+  </div>
+  
+  <button class="btn btn-primary"
+          [disabled]="allowNewServer"
+          (click)="onCreateServer($event)"
+  >Add server</button>
+<app-server *ngFor="let server of servers; let i = index" serverName="{{server + ' index = ' + i }}">{{server + ' Server number is ' + i}}</app-server>
